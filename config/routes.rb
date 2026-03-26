@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+  # ゲストログイン用のルート設定
+  devise_scope :user do
+    post "users/guest_sign_in", to: "users/session#guest_sign_in"
+  end
 
   resources :users, only: [ :show, :edit, :update ] do
     member do
