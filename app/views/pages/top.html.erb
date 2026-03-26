@@ -1,12 +1,21 @@
-<h3 class="fst-italic">pages#top<h3>
+<% content_for :title, "pages#top" %>
 <div class="container-fluid">
 <%= render "shared/searchbar" %>
     <div class="d-flex justify-content-center">
-        <div class="fs-5 fw-bold col-3 border rounded-3 me-4">
+        <div class="fs-5 fw-bold col-5 border rounded-3 me-4 bg-body">
         <div class="ps-2">新着</div>
-        <div></div>
+        <div>
+                <% if @content.content_image&.attached? %>
+                    <%= image_tag @content.content_image, size:"150x200" %>
+                <% else %>
+                    <%= image_tag "sample-image", size:"150x200", class:" object-fit-cover" %>
+                <% end %>
+                <div><%= @content.title %></div>
+                <div><%= @content.genre %></div>
+                <div><%= @content.author %></div>
         </div>
-        <div class="fs-5 fw-bold col-4 border rounded-3 me-4">カテゴリから探す</div>
-        <div class="fs-5 fw-bold col-4 border rounded-3">傾向から探す</div>
+        </div>
+        <div class="fs-5 fw-bold col-3 border rounded-3 me-4">カテゴリから探す</div>
+        <div class="fs-5 fw-bold col-3 border rounded-3">傾向から探す</div>
     </div>
 </div>

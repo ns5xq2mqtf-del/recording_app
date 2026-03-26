@@ -1,8 +1,11 @@
-<div class="bg-light px-4 py-5 mb-3">
+<div class="bg-primary-subtle px-4 py-5 mb-3">
 <%= form_with url: contents_path, method: :get, data: { turbo: false } do |f| %>
     <div class="col-4 mx-auto">
         <%= f.label :keyword, "キーワード", class:"form-label" %>
+        <div class="d-flex">
         <%= f.text_field :keyword, placeholder: "キーワードを入力", value: params[:keyword ], class:"form-control" %>
+        <%= f.submit "検索", class:"btn btn-primary" %>
+        </div>
     </div>
 <% end %>
 </div>
