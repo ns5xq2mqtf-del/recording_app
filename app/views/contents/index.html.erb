@@ -1,1 +1,37 @@
 <% content_for :title, "contents#index" %>
+<div class="container-fluid">
+<%= render "shared/searchbar" %>
+    <div class="row g-2">
+    <% @contents.each do |content| %>
+        <div class="col-12 col-md-4 col-lg-3 my-2">
+
+        <div class="card h-100">
+            <div class="card-img-top text-center">
+            <% if content.content_image.attached? %>
+                <%= image_tag content.content_image, size:"200x200", class:"object-fit-cover" %>
+            <% else %>
+                <%= image_tag "sample-image", size:"200x200", class:"object-fit-cover" %>
+            <% end %>
+        </div>
+
+        <div class="card-body d-flex flex-column">
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="card-title fs-4"><%= link_to content.title, content_path(content.id) %></div>
+            <div class="fs-6 badge rounded-pill bg-secondary align-middle"><%= content.genre %></div>
+        </div>
+        <div class="card-text">
+            <% if content.author.present? %>
+            <span>著者：</span><%= content.author %>
+            <% else %>
+            <div>　</div>
+            <% end %>
+        </div>
+        <div class="card-text"><span>販売元：</span><%= content.manufacturer %></div>
+        <div class="card-text"><%= content.detail %></div>
+        </div>
+
+        </div>
+        </div>
+    <% end %>
+    </div>
+</div>

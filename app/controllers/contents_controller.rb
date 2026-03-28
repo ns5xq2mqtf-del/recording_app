@@ -10,12 +10,17 @@ class ContentsController < ApplicationController
         end
 
         if params[:tag_name].present?
-            @contens = @contents.search_by_tag(params[:tag_name])
+            @contents = @contents.search_by_tag(params[:tag_name])
         end
 
         if params[:genre].present?
-            @contens = @contents.search_by_genre(params[:genre])
+            @contents = @contents.search_by_genre(params[:genre])
         end
+    end
+
+    #コンテンツ一覧から飛ぶコメント閲覧画面へ
+    def show
+        #set_contentする
     end
 
     #コンテンツ新規登録画面
@@ -32,10 +37,6 @@ class ContentsController < ApplicationController
         else
             render "contents/show"
         end
-    end
-
-    #コンテンツ一覧から飛ぶコメント閲覧画面へ
-    def show
     end
 
     def edit
