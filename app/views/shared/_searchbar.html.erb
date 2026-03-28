@@ -3,12 +3,12 @@
     <div class="col-4 mx-auto">
         <%= f.label :keyword, "キーワードから探す", class:"form-label mb-0" %>
         <div class="d-flex">
-        <%= f.text_field :keyword, placeholder: "キーワードを入力", value: params[ :keyword ], class:"form-control" %>
+        <%= f.text_field :keyword, placeholder: "キーワードを入力", value: params[:keyword], class:"form-control" %>
         <%= f.submit "検索", class:"btn btn-primary" %>
         </div>
         <%= f.label :tag_title, "タグから探す", class:"form-label mb-0 mt-3" %>
         <div class="d-flex">
-            <%= f.text_field :tag_title, placeholder: "タグを入力", value: params[ :tag_title ], class:"form-control" %>
+            <%= f.text_field :tag_title, placeholder: "タグを入力", value: params[:tag_name], class:"form-control" %>
             <%= f.submit "検索", class:"btn btn-primary" %>
         </div>
     </div>

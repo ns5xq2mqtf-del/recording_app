@@ -8,6 +8,14 @@ class ContentsController < ApplicationController
             #contentモデルのtitle/genre/authorカラムを対象にあいまい検索。
             @contents = @contents.search_all_columns(params[:keyword])
         end
+
+        if params[:tag_name].present?
+            @contens = @contents.search_by_tag(params[:tag_name])
+        end
+
+        if params[:genre].present?
+            @contens = @contents.search_by_genre(params[:genre])
+        end
     end
 
     #コンテンツ新規登録画面
@@ -23,6 +31,7 @@ class ContentsController < ApplicationController
             redirect_to content_path(@content)
         else
             render "contents/show"
+        end
     end
 
     #コンテンツ一覧から飛ぶコメント閲覧画面へ
