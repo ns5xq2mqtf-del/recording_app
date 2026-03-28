@@ -1,8 +1,8 @@
 class Content < ApplicationRecord
     has_one_attached :content_image
 
-    validates :title, presence: true,
-    validates :detail, presence: true,
+    validates :title, presence: true
+    validates :detail, presence: true
     validates :manufacturery, presence: true
 
     OPTIONS = [ "書籍", "ゲーム", "映像作品", "その他" ].freeze
