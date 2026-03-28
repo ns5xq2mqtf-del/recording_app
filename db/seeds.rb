@@ -21,7 +21,25 @@ user = User.create!(
 
 # 上記ユーザの設定でContentレコード作成
 Content.create!([
-    { user_id: user.id, title: "山月記", detail: "詩人となる望みに敗れて虎となった男・李徴が、自分の数奇な運命を友人の袁傪に語る変身譚", manufacturer: "青空文庫", genre:"文芸書", author: "中島敦"},
-    { user_id: user.id, title: "女生徒", detail: "著者本人の日記を題材に、思春期の少女の1日を独白体で綴った短編小説。", manufacturer: "青空文庫", genre:"文芸書", author: "太宰治" }
+    { user_id: user.id, title: "山月記", detail: "詩人となる望みに敗れて虎となった男・李徴が,自分の数奇な運命を友人の袁傪に語る変身譚", manufacturer: "青空文庫", genre:"書籍", author: "中島敦"},
+    { user_id: user.id, title: "女生徒", detail: "著者本人の日記を題材に,思春期の少女の1日を独白体で綴った短編小説。", manufacturer: "青空文庫", genre:"書籍", author: "太宰治" },
+    { user_id: user.id, title: "不連続面", detail: "大正12年,震災の影に揺れる帝都で起こる怪奇現象を巡った一人称ホラーゲーム。", manufacturer: "liminal games", genre:"ゲーム", author: "" },
+    { user_id: user.id, title: "図書館であった怖い話", detail: "図書館を舞台に様々な境遇の人の不思議な話を聞いて回るシュミレーションゲーム。", manufacturer: "三重苦", genre:"ゲーム", author: "" },
+    { user_id: user.id, title: "0から始める中国語", detail: "発音から丁寧に寄り添い,日常で使える表現を無理なく身につけられる一冊。対応アプリ用シリアルコード付き。", manufacturer: "快哉文庫", genre:"書籍", author: "" },
+    { user_id: user.id, title: "物語の中のごちそう-イギリス編-", detail: "絵本や映画の中に出てきたあの食べ物を,レシピやコラムと合わせてご紹介。", manufacturer: "曙出版", genre:"書籍", author: "" },
+    { user_id: user.id, title: "世界路地裏名鑑", detail: "一度は訪れてみたくなる世界各地の魅力的な路地裏の資料集。", manufacturer: "曙出版", genre:"書籍", author: "" },
+    { user_id: user.id, title: "ハムレット", detail: "父王を毒殺され,母を奪われたデンマーク王子ハムレットの復讐譚。", manufacturer: "劇団青ザクロ", genre:"映像作品", author: "" },
+])
+Tag.create!([
+    { name: "SF" },
+    { name: "恋愛" },
+    { name: "ホラー" },
+    { name: "歴史" },
+    { name: "アクション" },
+    { name: "バイオレンス" },
+    { name: "コメディ" },
+    { name: "青春" },
+    { name: "ドキュメンタリー" },
+    { name: "芸能/音楽" },
 ])
 puts "新規登録完了"

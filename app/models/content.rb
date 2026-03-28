@@ -1,6 +1,14 @@
 class Content < ApplicationRecord
     has_one_attached :content_image
 
+    validates :title, presence: true,
+    validates :detail, presence: true,
+    validates :manufacturery, presence: true
+
+    OPTIONS = [ "書籍", "ゲーム", "映像作品", "その他" ].freeze
+    validates :genre, presence: true
+    validates :genre, inclusion: { in: OPTIONS }
+
     scope :search_all_columns, ->(word) do
         columns = ["title", "genre", "author"]
         # .mapで配列の要素から～LIKE?文へ変形。.joinで文間にOR挿入。

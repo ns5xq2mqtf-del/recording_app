@@ -23,7 +23,7 @@
   <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
   <%= link_to "備忘録", root_path, class:"navbar-brand" %>
-  <%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post %>
+  <%= link_to "ゲストログイン", users_guest_sign_in_path, data: { "turbo-method": :post }  %>
   </header>
 
   <body class="bg-light">
