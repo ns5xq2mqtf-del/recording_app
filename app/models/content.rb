@@ -1,9 +1,11 @@
 class Content < ApplicationRecord
     has_one_attached :content_image
+    has_many :content_tag_relation
+    has_many :tags, through: :content_tag_relation
 
     validates :title, presence: true
     validates :detail, presence: true
-    validates :manufacturery, presence: true
+    validates :manufacturer, presence: true
 
     OPTIONS = [ "書籍", "ゲーム", "映像作品", "その他" ].freeze
     validates :genre, presence: true
