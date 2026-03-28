@@ -18,4 +18,11 @@ class Content < ApplicationRecord
         # where(SQL文,~,~)のかたちに持ってきたい。
         where(query, *Array.new(columns.size, "%#{word}%"))
     end
+
+    scope :search_by_tag, ->(tag_title) {
+        return if tag_title.blank?
+        #tagsがﾓﾃﾞﾙ/titleがｶﾗﾑ/tag_titleが送信時の名称
+        joins(:tags).where( tags: { title: tag_title }).distinct
+    }
+
 end

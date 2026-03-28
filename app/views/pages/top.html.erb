@@ -2,7 +2,7 @@
 <div class="container-fluid">
 <%= render "shared/searchbar" %>
     <div class="d-flex justify-content-center">
-        <div class="fs-5 fw-bold col-5 border rounded-3 me-4 bg-body">
+        <div class="fs-5 fw-bold col-4 border rounded-3 me-4 bg-body py-2 px-2">
         <div class="ps-2">新着</div>
         <div>
                 <% if @content.content_image&.attached? %>
@@ -15,10 +15,14 @@
                 <div><%= @content.author %></div>
         </div>
         </div>
-        <div class="fs-5 fw-bold col-3 border rounded-3 me-4">カテゴリから探す</div>
-        <div class="fs-5 fw-bold col-3 border rounded-3">
+        <div class="fs-5 fw-bold col-3 border rounded-3 bg-body me-4 py-2 px-2">カテゴリから探す</div>
+        <div class="fs-5 fw-bold col-3 border rounded-3 bg-body py-2 px-2">
             <div>傾向から探す</div>
-            <div></div>
+            <div>
+                <%= Tag.first(10).each do |tag| %>
+                    <%= link_to tag.title, contents_path(tag_title: tag.title), class:"btn btn-outline-primary tag-btn" %>
+                <% end %>
+            </div>
         </div>
     </div>
 </div>
