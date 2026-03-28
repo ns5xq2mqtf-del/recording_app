@@ -19,10 +19,14 @@ class Content < ApplicationRecord
         where(query, *Array.new(columns.size, "%#{word}%"))
     end
 
-    scope :search_by_tag, ->(tag_title) {
-        return if tag_title.blank?
-        #tagsがﾓﾃﾞﾙ/titleがｶﾗﾑ/tag_titleが送信時の名称
-        joins(:tags).where( tags: { title: tag_title }).distinct
+    scope :search_by_tag, ->(tag_name) {
+        return if tag_name.blank?
+        #tagsがﾓﾃﾞﾙ/nameがｶﾗﾑ/tag_nameが送信時の名称
+        joins(:tags).where( tags: { name: tag_name }).distinct
     }
 
+    scope :search_by_genre, ->(genre) {
+        return if genre.blank?
+        where(genre: genre)
+    }
 end
