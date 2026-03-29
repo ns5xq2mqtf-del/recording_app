@@ -21,6 +21,7 @@ class ContentsController < ApplicationController
     #コンテンツ一覧から飛ぶコメント閲覧画面へ
     def show
         #set_contentする
+        @posts = Post.where(content_id: @content.id)
     end
 
     #コンテンツ新規登録画面
@@ -48,6 +49,9 @@ class ContentsController < ApplicationController
     def destroy
     end
 
+    def my_contents
+        @contents = current_user.contents
+    end
     #################################################################################################
     private
 

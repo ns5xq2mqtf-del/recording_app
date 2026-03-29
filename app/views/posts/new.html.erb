@@ -1,4 +1,14 @@
 <% content_for :title, "posts#new" %>
 <div class="container-fluid">
-
+    <div class="container col-8 col-md-5 justify-content-center border mt-3 py-2">
+    <%= form_with model: @post do |f| %>
+        <%= f.label :score, "評価", class:"form-label" %>
+        <%= f.select :score, [["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"]], {include_blank: "選択してください"}, {class:"form-select"} %>
+        <%= f.label :title, "レビュータイトル", class:"form-label" %>
+        <%= f.text_field :title, class:"form-control" %>
+        <%= f.label :body, "レビュー内容", class:"form-label"%>
+        <%= f.text_area :title, class:"form-control" %>
+        <%= f.submit "投稿する", class:"btn btn-primary mt-3" %>
+    <% end %>
+    </div>
 </div>

@@ -7,21 +7,21 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
-  #resources :users, only: [ :show, :edit, :update ] do
-    #member do
-      #get :account
-    #end
-  #end
+  resources :users, only: [ :show, :edit, :update ] do
+    member do
+      get :account
+    end
+  end
 
   resources :contents do
     collection do
-      post :confirm
+      get :my_contents
     end
-    resources :tag, only: [ :new, :create]
+    resources :tags, only: [ :new, :create]
     resources :posts, only: [ :new, :create ]
   end
 
-  resources :tag, except: [ :new, :create]
+  resources :tags, except: [ :new, :create]
   resources :posts, except: [ :new, :create]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
