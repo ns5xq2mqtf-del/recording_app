@@ -3,6 +3,8 @@ class Content < ApplicationRecord
     has_many :content_tag_relation
     has_many :tags, through: :content_tag_relation
 
+    accepts_nested_attributes_for :tags, reject_if: :all_blank#
+
     validates :title, presence: true
     validates :detail, presence: true
     validates :manufacturer, presence: true

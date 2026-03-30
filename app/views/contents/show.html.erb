@@ -8,7 +8,7 @@
     <div class="container bg-body col-md-8 col-lg-6 mt-4">
     <div class="row g-0 mx-auto" style="max-width: 800px;">
 
-        <div class="col-auto">
+        <div class="col-auto py-3">
         <% if @content.content_image.attached? %>
             <%= image_tag @content.content_image, size:"200x250", class:"object-fit-cover" %>
         <% else %>
@@ -18,8 +18,14 @@
 
         <div class="col px-4 d-flex flex-column justify-content-center">
             <div class="fs-2 my-2"><%= @content.title %></div>
+        <div class="mb-3">
+          <% @content.tags.each do |tag| %>
+            <span class="badge rounded-pill bg-secondary me-1"><%= tag.name %></span>
+          <% end %>
+        </div>
             <div><%= @content.manufacturer %></div>
             <div><%= @content.detail %></div>
+
             <div class="text-end mt-auto mb-4">
             <%= link_to "感想を投稿する", new_content_post_path(@content), class: "btn btn-primary" %>
             </div>

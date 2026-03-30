@@ -27,6 +27,7 @@ class ContentsController < ApplicationController
     #コンテンツ新規登録画面
     def new
         @content = current_user.contents.build
+        5.times { @content.tags.build }
     end
 
     #↑の登録処理
@@ -56,7 +57,7 @@ class ContentsController < ApplicationController
     private
 
     def content_params
-        params.require(:content).permit( :title, :detail, :genre, :manufacturer, :author, :content_image )
+        params.require(:content).permit( :title, :detail, :genre, :manufacturer, :author, :content_image, tags_attributes: [:id, :name, :_destroy])
     end
 
     def set_content

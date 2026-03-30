@@ -19,6 +19,14 @@
             <%= f.label :detail, "概要", class:"form-label mb-0 mt-2" %>
             <%= f.text_area :detail, class:"form-control" %>
             <div class="text-end">
+
+            <div>
+            <%= f.label :tags, "タグを追加", class:"form-label mb-0"%>
+            <%= f.fields_for :tags do |tag_form| %>
+            <%= tag_form.text_field :name, class: "form-control mt-2", placeholder: "タグ名を入力" %>
+            <% end %>
+            </div>
+
             <%= f.submit "登録する", class:"btn btn-primary mt-2" %>
             </div>
         <% end %>
