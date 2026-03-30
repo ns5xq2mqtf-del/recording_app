@@ -25,8 +25,9 @@ class PostsController < ApplicationController
     end
 
     def destroy
+        @content = @post.content
         @post.destroy
-        flash[:notice] = "- 削除完了 -"
+        flash[:notice] = "- レビューを削除しました -"
         redirect_to content_path(@content)
     end
 

@@ -42,4 +42,10 @@ Tag.create!([
     { name: "ドキュメンタリー" },
     { name: "芸能/音楽" },
 ])
+
+Content.all.each do |content|
+  # ランダムに1〜3個のタグを紐付ける
+  content.tags << Tag.all.sample(rand(1..3))
+end
+
 puts "テストデータ反映完了"

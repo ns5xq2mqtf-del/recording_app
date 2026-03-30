@@ -16,6 +16,8 @@ class ContentsController < ApplicationController
         if params[:genre].present?
             @contents = @contents.search_by_genre(params[:genre])
         end
+
+        @counts = @contents.count
     end
 
     #コンテンツ一覧から飛ぶコメント閲覧画面へ
