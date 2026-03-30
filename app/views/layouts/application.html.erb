@@ -25,7 +25,6 @@
       <%= link_to "備忘録", root_path, class: "navbar-brand" %>
 
       <% if user_signed_in? %>
-        <%# ms-auto を使うことで、これ以降の要素を右端に寄せます %>
         <div class="dropdown ms-auto">
           <a class="d-flex align-items-center rounded bg-transparent text-decoration-none text-light dropdown-toggle"
              id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
@@ -41,9 +40,9 @@
           </a>
 
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-            <%= link_to "コンテンツ新規登録", new_content_path, class:"dropdown-item" %>
-            <%= link_to "感想一覧", posts_path, class:"dropdown-item" %>
-            <%= link_to "投稿コンテンツ一覧", my_contents_contents_path, class:"dropdown-item" %>
+            <%= link_to "コンテンツ登録", new_content_path, class:"dropdown-item" %>
+            <%= link_to "レビュー一覧", posts_path, class:"dropdown-item" %>
+            <%= link_to "コンテンツ一覧", my_contents_contents_path, class:"dropdown-item" %>
             <%= link_to "マイページ", user_path(current_user), class:"dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class:"dropdown-item" %>
