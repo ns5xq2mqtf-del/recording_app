@@ -13,14 +13,21 @@ class PostsController < ApplicationController
     end
 
     def create
-        @post = current_user.post(post_params)
+        @content = Content.find(params[:content_id])
+        @post = current_user.posts.build(post_params)
+        @post.content = @content
         if @post.save
             flash[:notice] = "感想を投稿しました！"
             redirect_to content_path(@content)
+        else
+            render :new, status: :unprocessable_entity
         end
     end
 
     def destroy
+        @post.destroy
+        flash[:notice] = "- 削除完了 -"
+        redirect_to content_path(@content)
     end
 
 

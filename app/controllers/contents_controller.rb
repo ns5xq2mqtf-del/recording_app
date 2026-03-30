@@ -33,10 +33,10 @@ class ContentsController < ApplicationController
     def create
         @content = current_user.contents.build(content_params)
         if @content.save
-            flash[:notice] = "コンテンツを登録しました"
+            flash[:notice] = "コンテンツを登録しました!"
             redirect_to content_path(@content)
         else
-            render "contents/index"
+            render "contents/index", status: :unprocessable_entity
         end
     end
 

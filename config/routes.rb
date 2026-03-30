@@ -18,11 +18,11 @@ Rails.application.routes.draw do
       get :my_contents
     end
     resources :tags, only: [ :new, :create]
-    resources :posts, only: [ :new, :create ]
+    resources :posts, only: [ :new, :create, :destroy ]
   end
 
   resources :tags, except: [ :new, :create]
-  resources :posts, except: [ :new, :create]
+  resources :posts, except: [ :new, :create, :destroy]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
