@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <% if flash[:notice] %>
+        <div class="text-center mb-2"><%= flash[:notice] %></div>
+    <% end %>
+    <div class="col-8 border  bg-body rounded px-3 pt-4 mx-auto">
+    <div class="row">
+    <div class="col-4">
+    <div class="h3">設定</div>
+    <%= render "shared/edit_user_info" %>
+    </div>
+
+    <div class="col-8">
+        <div class="h5">プロフィール</div>
+        <div class="d-flex justify-content-center mb-3">
+        <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar, size: "150x150", class: "rounded-circle object-fit-cover" %>
+        <% else %>
+            <%= image_tag "default-avatar", size: "150x150", class: "rounded-circle " %>
+        <% end %>
+        </div>
+        <div class="col-12 py-4 mx-auto">
+        <div class="row justify-content-center mb-2">
+            <div class="col-5 text-start fw-bold">名前</div>
+            <div class="col-7"><%= @user.name %></div>
+        </div>
+        <div class="text-end me-5"><%= link_to "編集", edit_user_path(@user), class:"btn btn-secondary" %></div>
+        </div>
+    </div>
+</div>
