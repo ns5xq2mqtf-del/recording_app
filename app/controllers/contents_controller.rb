@@ -36,7 +36,7 @@ class ContentsController < ApplicationController
             flash[:notice] = "コンテンツを登録しました"
             redirect_to content_path(@content)
         else
-            render "contents/show"
+            render "contents/index"
         end
     end
 
@@ -56,7 +56,7 @@ class ContentsController < ApplicationController
     private
 
     def content_params
-        params.require(:content).permit( :title, :detail, :genre, :manufacturer, :author )
+        params.require(:content).permit( :title, :detail, :genre, :manufacturer, :author, :content_image )
     end
 
     def set_content

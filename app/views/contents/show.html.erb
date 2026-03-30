@@ -1,5 +1,8 @@
 <% content_for :title, "contents#show" %>
 <div class="container-fluid">
+<% if flash[:notice] %>
+    <div class="text-center mb-2"><%= flash[:notice] %></div>
+<% end %>
 
     <div class="container bg-body mt-4">
     <div class="mx-auto" style="max-content; width: fit-content;">

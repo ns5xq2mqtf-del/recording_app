@@ -4,7 +4,7 @@
       <h2 class="mb-4 ms-3">パスワード再発行</h2>
 
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= render "users/shared/error_messages", resource: resource %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
         <div><%= f.label :email,"再設定用のリンクを送付します。メールアドレスを入力してください", class:"form-label" %></div>
@@ -15,7 +15,7 @@
         <%= f.submit "確認メールを送信する", class:"btn btn-secondary" %>
       </div>
       <% end %>
-      <%= render "users/shared/links" %>
+      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>
