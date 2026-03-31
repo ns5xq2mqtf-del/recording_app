@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "コンテンツ記録アプリ" %></title>
+    <title>Recordig App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
@@ -22,7 +22,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <%= link_to "備忘録", root_path, class: "navbar-brand" %>
+      <%= link_to "Recordig App", root_path, class: "navbar-brand" %>
 
       <% if user_signed_in? %>
         <div class="dropdown ms-auto">
@@ -40,9 +40,9 @@
           </a>
 
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+            <%= link_to "コンテンツ一覧", my_contents_contents_path, class:"dropdown-item" %>
             <%= link_to "コンテンツ登録", new_content_path, class:"dropdown-item" %>
             <%= link_to "レビュー一覧", posts_path, class:"dropdown-item" %>
-            <%= link_to "コンテンツ一覧", my_contents_contents_path, class:"dropdown-item" %>
             <%= link_to "マイページ", user_path(current_user), class:"dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class:"dropdown-item" %>
