@@ -1,23 +1,23 @@
-<% content_for :title, "posts#new" %>
 <div class="container-fluid">
-    <div class="container col-8 col-md-5 justify-content-center border mt-3 py-2">
-    <div class="row justify-content-center mb-4">
-        <div class="col-auto text-center">
-        <% if @content.content_image.attached? %>
-            <%= image_tag @content.content_image, size:"200x250", class:"object-fit-cover" %>
-        <% else %>
-            <%= image_tag "sample_content", size:"300x460", class:"object-fit-contain" %>
-        <% end %>
-        </div>
+    <div class="container bg-body col-8 col-md-5 justify-content-center my-3 py-2">
+        <div class="row justify-content-center mb-4">
+            <div class="col-auto text-center">
+            <% if @content.content_image.attached? %>
+                <%= image_tag @content.content_image, size:"200x250", class:"object-fit-cover" %>
+            <% else %>
+                <%= image_tag "sample_content", size:"300x460", class:"object-fit-contain" %>
+            <% end %>
+            </div>
 
         <div class="col-12 col-md-6 d-flex flex-column justify-content-between">
-        <div class="row">
-            <div class="fs-2 my-2"><%= @content.title %></div>
-            <div><%= @content.manufacturer %></div>
-            <div><%= @content.detail %></div>
-        </div>
+            <div class="row">
+                <div class="fs-2 my-2"><%= @content.title %></div>
+                <div><%= @content.manufacturer %></div>
+                <div><%= @content.detail %></div>
+            </div>
         </div>
     </div>
+
     <div>
     <%= form_with(model: @post, url: content_posts_path(@content)) do |f| %>
         <%= f.label :score, "評価", class:"form-label mb-0 mt-3" %>
@@ -29,5 +29,5 @@
         <div class="text-end"><%= f.submit "投稿する", class:"btn btn-primary mt-3" %></div>
     <% end %>
     </div>
-    </div>
+</div>
 </div>

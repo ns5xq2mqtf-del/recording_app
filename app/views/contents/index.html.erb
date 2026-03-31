@@ -1,6 +1,5 @@
-<% content_for :title, "contents#index" %>
+<%= render "shared/searchbar"%>
 <div class="container-fluid">
-<%= render "shared/searchbar" %>
 <div class="mt-4 mb-2">検索結果：<span class=" h5 fw-bold"><%= @counts %></span>件</div>
     <div class="row g-2">
     <% @contents.each do |content| %>

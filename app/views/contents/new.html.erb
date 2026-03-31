@@ -1,6 +1,5 @@
-<% content_for :title, "contents#index" %>
-        <div class="container bg-body my-4 py-3 col-10 col-md-4 border">
-        <div class="fs-3">コンテンツ新規登録</div>
+<div class="container bg-body my-4 py-3 col-10 col-md-4 border">
+    <div class="fs-3">コンテンツ新規登録</div>
         <%= form_with model: @content do |f| %>
             <%= f.label :content_image, "イメージ画像", class:"form-label mb-0 mt-2" %>
             <%= f.file_field :content_image, class:"form-control" %>
@@ -19,14 +18,12 @@
             <%= f.label :detail, "概要", class:"form-label mb-0 mt-2" %>
             <%= f.text_area :detail, class:"form-control" %>
             <div class="text-end">
-
             <div>
             <%= f.label :tags, "タグを追加", class:"form-label mb-0"%>
             <%= f.fields_for :tags do |tag_form| %>
-            <%= tag_form.text_field :name, class: "form-control mt-2", placeholder: "タグ名を入力" %>
+                <%= tag_form.text_field :name, class: "form-control mt-2", placeholder: "タグ名を入力" %>
             <% end %>
             </div>
-
             <%= f.submit "登録する", class:"btn btn-primary mt-2" %>
             </div>
         <% end %>
