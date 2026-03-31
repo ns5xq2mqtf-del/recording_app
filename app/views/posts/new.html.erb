@@ -26,19 +26,8 @@
         <%= f.text_field :title, class:"form-control" %>
         <%= f.label :body, "レビュー内容", class:"form-label mb-0 mt-3"%>
         <%= f.text_area :body, class:"form-control" %>
-        <%= f.submit "投稿する", class:"btn btn-primary mt-3" %>
+        <div class="text-end"><%= f.submit "投稿する", class:"btn btn-primary mt-3" %></div>
     <% end %>
     </div>
     </div>
-
-<% if @content.errors.any? %>
-  <div class="alert alert-danger">
-    <ul>
-      <% @content.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
 </div>

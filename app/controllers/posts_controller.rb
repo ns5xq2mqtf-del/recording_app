@@ -2,6 +2,10 @@ class PostsController < ApplicationController
     before_action :authenticate_user!
     before_action :set_post, only: [:show, :destroy]
 
+    def index
+        @posts = current_user.posts
+    end
+
     def show
 
     end
@@ -17,7 +21,7 @@ class PostsController < ApplicationController
         @post = current_user.posts.build(post_params)
         @post.content = @content
         if @post.save
-            flash[:notice] = "感想を投稿しました！"
+            flash[:notice] = "レビューを投稿しました！"
             redirect_to content_path(@content)
         else
             render :new, status: :unprocessable_entity
@@ -28,7 +32,7 @@ class PostsController < ApplicationController
         @content = @post.content
         @post.destroy
         flash[:notice] = "- レビューを削除しました -"
-        redirect_to content_path(@content)
+        redirect_to posts_path
     end
 
 
