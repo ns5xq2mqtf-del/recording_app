@@ -23,7 +23,7 @@ class ContentsController < ApplicationController
     #コンテンツ一覧から飛ぶコメント閲覧画面へ
     def show
         #set_contentする
-        @posts = Post.where(content_id: @content.id)
+        @posts = Post.where(content_id: @content.id).published
     end
 
     #コンテンツ新規登録画面

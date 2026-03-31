@@ -26,6 +26,10 @@
         <%= f.text_field :title, class:"form-control" %>
         <%= f.label :body, "レビュー内容", class:"form-label mb-0 mt-3"%>
         <%= f.text_area :body, class:"form-control" %>
+        <div class="form-check text-end">
+            <%= f.check_box :published, {checked: true}, "true", "false" %>
+            <%= f.label :published, "この投稿を公開する" %>
+        </div>
         <div class="text-end"><%= f.submit "投稿する", class:"btn btn-primary mt-3" %></div>
     <% end %>
     </div>

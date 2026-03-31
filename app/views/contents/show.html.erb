@@ -17,9 +17,11 @@
         <div class="col px-4 d-flex flex-column justify-content-start">
             <div class="fs-2 my-2"><%= @content.title %></div>
         <div class="mb-3">
-          <% @content.tags.each do |tag| %>
-            <span class="badge rounded-pill bg-secondary me-1"><%= tag.name %></span>
+        <% @content.tags.each do |tag| %>
+          <%= link_to contents_path(tag_name: tag.name), class: "badge rounded-pill bg-secondary me-1 text-decoration-none" do %>
+            <%= tag.name %>
           <% end %>
+        <% end %>
         </div>
             <div><%= @content.manufacturer %></div>
             <div><%= @content.detail %></div>
