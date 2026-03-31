@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "pages#top"
+
   devise_for :users, controllers: {
   sessions: 'users/sessions'
 }
@@ -35,5 +37,5 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  root "pages#top"
+
 end
