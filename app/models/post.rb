@@ -8,5 +8,4 @@ class Post < ApplicationRecord
 
     # 公開のチェックありのみ絞り込み
     scope :published, -> { where(published: true) }
-
 end

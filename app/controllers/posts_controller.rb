@@ -1,13 +1,12 @@
 class PostsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_post, only: [:show, :destroy]
+    before_action :set_post, only: [ :show, :destroy ]
 
     def index
         @posts = current_user.posts
     end
 
     def show
-
     end
 
     def new
@@ -36,7 +35,7 @@ class PostsController < ApplicationController
     end
 
 
-#########################################################################
+    #########################################################################
     private
 
     def post_params

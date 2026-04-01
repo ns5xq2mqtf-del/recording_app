@@ -1,11 +1,11 @@
 class ContentsController < ApplicationController
     before_action :authenticate_user!, except: :index
-    before_action :set_content, only: [:show, :edit, :update, :destroy]
-    #コンテンツ検索結果表示画面
+    before_action :set_content, only: [ :show, :edit, :update, :destroy ]
+    # コンテンツ検索結果表示画面
     def index
         @contents = Content.all
         if params[:keyword].present?
-            #contentモデルのtitle/genre/authorカラムを対象にあいまい検索。
+            # contentモデルのtitle/genre/authorカラムを対象にあいまい検索。
             @contents = @contents.search_all_columns(params[:keyword])
         end
 
@@ -20,19 +20,19 @@ class ContentsController < ApplicationController
         @counts = @contents.count
     end
 
-    #コンテンツ一覧から飛ぶコメント閲覧画面へ
+    # コンテンツ一覧から飛ぶコメント閲覧画面へ
     def show
-        #set_contentする
+        # set_contentする
         @posts = Post.where(content_id: @content.id).published
     end
 
-    #コンテンツ新規登録画面
+    # コンテンツ新規登録画面
     def new
         @content = current_user.contents.build
         5.times { @content.tags.build }
     end
 
-    #↑の登録処理
+    # ↑の登録処理
     def create
         @content = current_user.contents.build(content_params)
         if @content.save
@@ -59,7 +59,7 @@ class ContentsController < ApplicationController
     private
 
     def content_params
-        params.require(:content).permit( :title, :detail, :genre, :manufacturer, :author, :content_image, tags_attributes: [:id, :name, :_destroy])
+        params.require(:content).permit(:title, :detail, :genre, :manufacturer, :author, :content_image, tags_attributes: [ :id, :name, :_destroy ])
     end
 
     def set_content

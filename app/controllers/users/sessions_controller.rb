@@ -1,7 +1,7 @@
 class Users::SessionsController < Devise::SessionsController
     def guest_sign_in
-        user = User.guest#Userモデルのguestメソッドでguestユーザを作成
+        user = User.guest# Userモデルのguestメソッドでguestユーザを作成
         sign_in user
-        redirect_to root_path, notice:"ゲストユーザとしてログインしました"
+        redirect_to root_path, notice: "ゲストユーザとしてログインしました"
     end
 end

@@ -3,6 +3,5 @@ class PagesController < ApplicationController
         @content = Content.last
     end
 
-#######################################################
-
+  #######################################################
 end
