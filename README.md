@@ -9,10 +9,15 @@
 ## サービスのURL
 
 ## 機能
-    ・TOP画面/作品検索画面：キーワード(作品名/)
+    ・TOP画面/作品検索画面：キーワード(作品名/ジャンル/詳細/発売元/筆者)、タグから絞り込み検索。
+    ・コンテンツ詳細画面：作品詳細と投稿されたレビューの閲覧。非公開設定のレビューは表示されません。
+    ・コンテンツ登録/一覧画面：作品の登録、登録済み作品の一覧表示。
+    ・レビュー登録/一覧画面：レビューの投稿、投稿済みレビューの一覧表示(非公開レビューも含める)。
+
 ## 開発背景
-    本アプリは～
-    プラスアルファで詳細機能の説明追加
+    映画のレビュー投稿サイトや書籍に関するレビュー投稿アプリはあったものの、作品の媒体を問わず感想を登録できるサービスが欲しいと考えたため。
+    自分の感想の投稿や他人の感想の閲覧、新しいコンテンツを探したりするオープンな使い方のほか
+    自分の感想を記録して振り返られるクローズな使い方も可能にすることで、ユーザーそれぞれが自分に合った使い方を選べるようにしました。
 
 ##　こだわり
     ・コメント投稿機能は公開/非公開設定可能。
@@ -25,26 +30,3 @@
 ## ER図
     https://github.com/user-attachments/assets/21736136-23a1-47fd-a5f0-f2eda699bcd9
 
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
