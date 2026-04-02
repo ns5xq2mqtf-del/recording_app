@@ -15,7 +15,7 @@
         <% if @user.avatar.attached? %>
             <%= image_tag @user.avatar, size: "150x150", class: "rounded-circle object-fit-cover" %>
         <% else %>
-            <%= image_tag "default-avatar", size: "150x150", class: "rounded-circle " %>
+            <%= image_tag "default-avatar.png", size: "150x150", class: "rounded-circle " %>
         <% end %>
         </div>
         <div class="col-12 py-4 mx-auto">

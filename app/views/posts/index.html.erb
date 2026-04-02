@@ -20,7 +20,7 @@
             <% if post.content.content_image.attached? %>
                 <%= image_tag post.content.content_image, size:"200x200", class:"object-fit-cover" %>
             <% else %>
-                <%= image_tag "sample_content", size:"200x200", class:"object-fit-cover" %>
+                <%= image_tag "sample_content.png", size:"200x200", class:"object-fit-cover" %>
             <% end %>
             </td>
             <td class="text-center align-middle col-3"><%= link_to post.content.title, content_path(post.content), class:"text-decoration-none" %></td>

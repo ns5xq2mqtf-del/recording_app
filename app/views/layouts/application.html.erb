@@ -33,7 +33,7 @@
               <% if current_user.avatar.attached? %>
                 <%= image_tag current_user.avatar, size: "50x50", class: "rounded-circle object-fit-cover" %>
               <% else %>
-                <%= image_tag "default-avatar", size: "50x50", class: "rounded-circle object-fit-cover"%>
+                <%= image_tag "default-avatar.png", size: "50x50", class: "rounded-circle object-fit-cover"%>
               <% end %>
             </div>
             <span><%= current_user.name %></span>
