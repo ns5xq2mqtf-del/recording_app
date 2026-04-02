@@ -7,6 +7,7 @@
     https://github.com/user-attachments/assets/49982d1a-3684-4d51-afe4-18a84ebe0494
 
 ## サービスのURL
+    https://recording-app-8b89.onrender.com/
 
 ## 機能
     ・TOP画面/作品検索画面：キーワード(作品名/ジャンル/詳細/発売元/筆者)、タグから絞り込み検索。
